@@ -101,7 +101,7 @@ disqusShortname = ""
       title = "Android Projects"
       subtitle = "My Android Applications"
       image = "AndroidPic.jpg"
-      url = "blogs/tempus"
+      url = "blogs/lira"
 
     [[params.tiles.showcase]]
       title = "R Projects"
