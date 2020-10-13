@@ -95,7 +95,7 @@ disqusShortname = ""
       title = "iOS Projects"
       subtitle = "My iOS Applications"
       image = "ApplePic.jpg"
-      url = "blogs/covid"
+      url = "blogs/YieldCurveInv"
 
     [[params.tiles.showcase]]
       title = "Android Projects"
