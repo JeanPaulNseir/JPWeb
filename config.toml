@@ -110,9 +110,9 @@ disqusShortname = ""
       url = "blogs/lira"
 
     [[params.tiles.showcase]]
-      title = "Mobile Applications Portfolio"
-      subtitle = "My Web Applications"
-      image = "WebPic.jpg"
+      title = "My Resume"
+      subtitle = "Find out more about me with my Resume"
+      image = "Resume.jpg"
       url = "blogs/Resume.pdf"
 
   #  [[params.tiles.showcase]]
@@ -190,30 +190,30 @@ disqusShortname = ""
     copyright = "Company Name"
 
     # Uses font awesome icons
-    [[params.footer.social]]
-      icon = "fa-twitter"
-      url= "https://www.twitter.com"
-      label = "Twitter"
+   # [[params.footer.social]]
+   #   icon = "fa-twitter"
+   #   url= "https://www.twitter.com"
+    #  label = "Twitter"
 
     [[params.footer.social]]
       icon = "fa-facebook"
-      url= "https://www.facebook.com"
+      url= "https://www.facebook.com/jeanpaul.nseir"
       label = "Facebook"
 
-    [[params.footer.social]]
-      icon = "fa-instagram"
-      url= "https://www.instagram.com"
-      label = "Instagram"
+#    [[params.footer.social]]
+  #    icon = "fa-instagram"
+  #    url= "https://www.instagram.com"
+   #   label = "Instagram"
     
     [[params.footer.social]]
       icon = "fa-github"
-      url= "https://www.github.com"
+      url= "https://github.com/JeanPaulNseir"
       label = "GitHub"
 
-    [[params.footer.social]]
-      icon = "fa-linkedin"
-      url= "https://www.linkedin.com"
-      label = "LinkedIn"
+ #   [[params.footer.social]]
+ #     icon = "fa-linkedin"
+  #    url= "https://www.linkedin.com"
+   #   label = "LinkedIn"
 
     [[params.footer.quicklinks]]
       text = "Design: "
