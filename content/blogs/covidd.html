@@ -20,9 +20,9 @@ output:
 
 covid_data &lt;- vroom::vroom(url) %&gt;% # If vroom::vroom(url) doesn&#39;t work, use read_csv(url)
   clean_names()</code></pre>
-<p>###Using the data gathered, I created graphs that shows the % death rate by ge group, sex, and whether the patient had co-morbidities or not</p>
-<p><img src="/Users/Jeanps/Desktop/JPWeb/images/covid_death_rate_comorbidities.png" width="100%" style="display: block; margin: auto;" /><img src="/Users/Jeanps/Desktop/JPWeb/images/covid_death_rate_icu.png" width="100%" style="display: block; margin: auto;" /><img src="/blogs/covidd_files/figure-html/covid_challenge-3.png" width="100%" style="display: block; margin: auto;" />
-###Using the data gathered, I created graphs that shows the % death rate by ge group, sex, and whether the patient had co-morbidities or not</p>
+<p>Using the data gathered, I created graphs that shows the % death rate by ge group, sex, and whether the patient had co-morbidities or not</p>
+<p><img src="/blogs/covidd_files/figure-html/covid_challenge-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Using the data gathered, I created graphs that shows the % death rate by ge group, sex, and whether the patient had co-morbidities or not</p>
 <pre class="r"><code># by age group, sex, and whether the patient had  admited to Intensive Care Unit (ICU) or not.
 covid_data %&gt;% 
   mutate(death_rate_binary = case_when(death_yn == &quot;Yes&quot; ~ 1, 
