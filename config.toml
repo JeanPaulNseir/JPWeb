@@ -92,16 +92,16 @@ disqusShortname = ""
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "iOS Projects"
-      subtitle = "My iOS Applications"
-      image = "ApplePic.jpg"
+      title = "Yield Curve inversion"
+      subtitle = "Will we face a recession?"
+      image = "yield.jpg"
       url = "blogs/YieldCurveInv"
 
     [[params.tiles.showcase]]
-      title = "Android Projects"
-      subtitle = "My Android Applications"
-      image = "AndroidPic.jpg"
-      url = "blogs/lira"
+      title = "COVID-19 Analysis"
+      subtitle = "Some filtered information on the virus"
+      image = "covid.jpg"
+      url = "blogs/covidd"
 
     [[params.tiles.showcase]]
       title = "R Projects"
@@ -110,7 +110,7 @@ disqusShortname = ""
       url = "blogs/magna"
 
     [[params.tiles.showcase]]
-      title = "Web Projects"
+      title = "Mobile Applications Portfolio"
       subtitle = "My Web Applications"
       image = "WebPic.jpg"
       url = "blogs/ipsum"

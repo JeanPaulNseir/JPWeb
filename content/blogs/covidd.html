@@ -1,0 +1,52 @@
+---
+title: "COVID-19 Analysis"
+author: "Your name goes here"
+date: "2020-10-14"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+---
+
+
+
+<p>CDC COVID-19 Public Use Data</p>
+<p>I used the <a href="https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf">CDC Covid-19 Case Surveillance Data</a>.</p>
+<pre class="r"><code>url &lt;- &quot;https://data.cdc.gov/api/views/vbim-akqf/rows.csv?accessType=DOWNLOAD&quot;
+
+covid_data &lt;- vroom::vroom(url) %&gt;% # If vroom::vroom(url) doesn&#39;t work, use read_csv(url)
+  clean_names()</code></pre>
+<p>###Using the data gathered, I created graphs that shows the % death rate by ge group, sex, and whether the patient had co-morbidities or not</p>
+<p><img src="/Users/Jeanps/Desktop/JPWeb/images/covid_death_rate_comorbidities.png" width="100%" style="display: block; margin: auto;" /><img src="/Users/Jeanps/Desktop/JPWeb/images/covid_death_rate_icu.png" width="100%" style="display: block; margin: auto;" /><img src="/blogs/covidd_files/figure-html/covid_challenge-3.png" width="100%" style="display: block; margin: auto;" />
+###Using the data gathered, I created graphs that shows the % death rate by ge group, sex, and whether the patient had co-morbidities or not</p>
+<pre class="r"><code># by age group, sex, and whether the patient had  admited to Intensive Care Unit (ICU) or not.
+covid_data %&gt;% 
+  mutate(death_rate_binary = case_when(death_yn == &quot;Yes&quot; ~ 1, 
+                                       TRUE ~ 0)) %&gt;%
+  group_by(age_group, sex, icu_yn) %&gt;% 
+  summarise(death_percent = mean(death_rate_binary)*100) %&gt;% 
+  ungroup() %&gt;% 
+  filter(!icu_yn %in% c(&quot;Missing&quot;, &quot;Unknown&quot;)) %&gt;% 
+  filter(!sex %in% c(&quot;Missing&quot;, &quot;Unknown&quot;, &quot;Other&quot;, NA)) %&gt;% 
+  filter(!age_group %in% c(&quot;Missing&quot;, &quot;Unknown&quot;, &quot;Other&quot;)) %&gt;% 
+  mutate(icu_admitted = case_when(icu_yn == &quot;Yes&quot; ~ &quot;Admitted to ICU&quot;, 
+                            TRUE ~ &quot;NO ICU&quot;)) %&gt;% 
+  ggplot() +
+  geom_bar(aes(death_percent,  age_group), stat = &quot;identity&quot;, fill = &quot;#E77471&quot;, alpha = 0.8) + 
+  geom_text(aes(death_percent, y = age_group, label = round(death_percent, 1)), hjust = -0.1,  size = 3) + 
+  facet_grid(icu_admitted ~  sex) + 
+  labs(
+    
+    x = &quot;&quot;, 
+    y = &quot;&quot;, 
+    title = &quot;Covid death % by age group, sex and whether patient was admitted to ICU&quot;
+    
+  ) + 
+   theme_bw() + 
+     theme(plot.title = element_text(size=11))</code></pre>
+<p><img src="/blogs/covidd_files/figure-html/unnamed-chunk-2-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p>Besides the graphs, make sure your code is easy to read and understand– imagine if you revisit this six months from now. you should be able to follow what you were doing!</p>
